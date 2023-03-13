@@ -1,5 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap");
-@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500:600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@400;500:600;700:800&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
@@ -7,8 +7,16 @@
 @layer base {
   body {
     font-family: "Raleway", sans-serif;
+    overflow-x: hidden;
+    height: 100vh;
+  }
+  html {
+    overflow-x: hidden;
   }
 }
 .container-custom {
-  @apply w-10/12 md:w-11/12 mx-auto;
+  @apply w-11/12 mx-auto md:w-[85%];
+}
+.nav-link-classes {
+  @apply absolute right-0 top-0 h-screen w-[60vw] mobileNav:w-auto mobileNav:h-auto mobileNav:relative bg-blue-100 mobileNav:bg-transparent text-sm lg:text-base font-medium text-white-200 mobileNav:text-blue-200 flex flex-col mobileNav:flex-row gap-9 mobileNav:gap-3 lg:gap-5 xl:gap-8 pt-40 pb-4 px-10 mobileNav:p-0 mobileNav:translate-x-0 transition-all duration-1000;
 }

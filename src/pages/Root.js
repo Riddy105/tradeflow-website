@@ -5,7 +5,7 @@ import { Outlet } from "react-router-dom";
 const RootLayout = () => {
   return (
     <>
-      <header className="container-custom">
+      <header>
         <NavBar />
       </header>
       <Outlet />
