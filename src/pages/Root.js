@@ -4,6 +4,7 @@ import { Outlet } from "react-router-dom";
 import Footer from "../components/Footer/Footer";
 
 const RootLayout = () => {
+  console.log("hiii");
   const [showNav, setShowNav] = useState(false);
   const navClickHandler = () => {
     setShowNav((prev) => !prev);

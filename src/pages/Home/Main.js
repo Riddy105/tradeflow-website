@@ -44,8 +44,11 @@ const Main = (props) => {
           </h2>
           <p className="text-[#333]">Our Products</p>
           <ul className="flex gap-4 md:gap-10 flex-wrap justify-center mt-5 md:mt-10">
-            {PRODUCTS.map((product) => (
-              <li className="font-bold bg-white-200 w-[168px] md:w-[33%] py-7 shadow-custom2 text-blue-100 rounded-lg text-sm sm:text-lg lg:text-2xl">
+            {PRODUCTS.map((product, index) => (
+              <li
+                key={index}
+                className="font-bold bg-white-200 w-[168px] md:w-[33%] py-7 shadow-custom2 text-blue-100 rounded-lg text-sm sm:text-lg lg:text-2xl"
+              >
                 <Link to="/"> {product}</Link>
               </li>
             ))}
