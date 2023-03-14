@@ -22,6 +22,7 @@ module.exports = {
           300: "#F6F7F9",
           400: "#6B6F80",
           500: "#292B33",
+          600: "#B0B0B0",
         },
       },
       boxShadow: {

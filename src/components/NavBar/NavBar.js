@@ -6,11 +6,11 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import Button from "../Button/Button";
 
-const NavBar = () => {
-  const [showNav, setShowNav] = useState(false);
-  const navClickHandler = () => {
-    setShowNav((prev) => !prev);
-  };
+const NavBar = ({ showNav, toggleNav }) => {
+  // const [showNav, setShowNav] = useState(false);
+  // const navClickHandler = () => {
+  //   setShowNav((prev) => !prev);
+  // };
   return (
     <div className="shadow-custom1 relative">
       <nav className="flex justify-between items-center py-4 w-11/12 mx-auto ">
@@ -23,7 +23,7 @@ const NavBar = () => {
         </Link>
         <ul
           className={`nav-link-classes ${
-            showNav ? "translate-x-0" : "translate-x-full "
+            showNav ? "translate-x-0" : "translate-x-full"
           }`}
         >
           <li>
@@ -43,7 +43,11 @@ const NavBar = () => {
           </li>
 
           <li className="mt-auto mobileNav:hidden">
-            <img src={whiteLogo} className="" alt="Tradeflow logo"></img>
+            <img
+              src={whiteLogo}
+              className="w-[150px] h-[60px] object-contain"
+              alt="Tradeflow logo"
+            ></img>
           </li>
         </ul>
         <div className="flex gap-2">
@@ -57,7 +61,7 @@ const NavBar = () => {
           </NavLink>
           <button
             className="text-blue-100 mobileNav:hidden z-10 "
-            onClick={navClickHandler}
+            onClick={toggleNav}
           >
             {!showNav && <GiHamburgerMenu className="text-3xl " />}
             {showNav && <IoCloseSharp className="text-4xl text-white-100" />}

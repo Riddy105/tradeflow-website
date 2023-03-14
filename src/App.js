@@ -1,4 +1,3 @@
-import Header from "./components/Header/Header";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import RootLayout from "./pages/Root";
 import HomePage from "./pages/Home/Home";
