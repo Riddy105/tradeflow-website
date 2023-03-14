@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React from "react";
 import logo from "../../assets/images/Tradeflow logo.png";
 import whiteLogo from "../../assets/images/Tradeflow-logo-white.png";
 import { NavLink, Link } from "react-router-dom";

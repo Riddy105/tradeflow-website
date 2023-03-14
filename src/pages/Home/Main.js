@@ -34,7 +34,11 @@ const Main = (props) => {
               solution.
             </p>
           </article>
-          <img src={investment} className="lg:w-[563px] lg:h-[563px]"></img>
+          <img
+            src={investment}
+            className="lg:w-[563px] lg:h-[563px]"
+            alt="investment illustration"
+          ></img>
         </div>
       </section>
       <section className="py-10 md:py-20">

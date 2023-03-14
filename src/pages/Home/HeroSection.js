@@ -1,6 +1,6 @@
 import React from "react";
 import Button from "../../components/Button/Button";
-import { NavLink, Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 import launching from "../../assets/images/launching-amico.svg";
 
 const HeroSection = () => {
