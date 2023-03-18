@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import countryList from "react-select-country-list";
 import React from "react";
 const initialValues = {
-  title: "",
+  title: "title",
   firstname: "",
   lastname: "",
   businessname: "",
@@ -27,20 +27,18 @@ const VendorForm = () => {
   return (
     <form onSubmit={formik.handleSubmit}>
       <select
-        className="input-fields"
+        className="input-fields mb-4"
         name="title"
         onChange={formik.handleChange}
         onBlur={formik.handleBlur}
         value={formik.values.title}
       >
-        <option selected disabled>
-          Title
-        </option>
+        <option value="title">Title</option>
         <option>Mr</option>
         <option>Miss</option>
         <option>Mrs</option>
       </select>
-      <div>
+      <div className="mb-4">
         <input
           type="text"
           placeholder="First Name"
@@ -50,9 +48,8 @@ const VendorForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.firstname}
         />
-        <p className="error">Error</p>
       </div>
-      <div>
+      <div className="mb-4">
         <input
           type="text"
           placeholder="Last Name"
@@ -62,9 +59,8 @@ const VendorForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.lastname}
         />
-        <p className="error">Error</p>
       </div>
-      <div>
+      <div className="mb-4">
         <input
           type="text"
           placeholder="Business Name"
@@ -74,10 +70,9 @@ const VendorForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.businessname}
         />
-        <p className="error">Error</p>
       </div>
 
-      <div className="flex gap-4 ">
+      <div className="flex gap-4 mb-4">
         <select
           className="border border-blue-400 h-12 md:h-16 bg-white-300 w-2/5 px-2 rounded-lg text-grey-700 mb-4 "
           name="country"
@@ -99,10 +94,9 @@ const VendorForm = () => {
             onBlur={formik.handleBlur}
             value={formik.values.businesstype}
           />
-          <p className="error">Error</p>
         </div>
       </div>
-      <div>
+      <div className="mb-4">
         <input
           type="text"
           placeholder="State"
@@ -112,9 +106,8 @@ const VendorForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.state}
         />
-        <p className="error">Error</p>
       </div>
-      <div>
+      <div className="mb-4">
         <input
           type="number"
           placeholder="National Identification Number (NIN)"
@@ -124,9 +117,8 @@ const VendorForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.nin}
         />
-        <p className="error">Error</p>
       </div>
-      <div>
+      <div className="mb-4">
         <input
           type="email"
           placeholder="Email address (if any)"
@@ -136,9 +128,8 @@ const VendorForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.email}
         />
-        <p className="error">Error</p>
       </div>
-      <div>
+      <div className="mb-4">
         <input
           type="number"
           placeholder="Business WhatsApp Number"
@@ -148,9 +139,8 @@ const VendorForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.whatsappnumber}
         />
-        <p className="error">Error</p>
       </div>
-      <div>
+      <div className="mb-4">
         <input
           type="number"
           placeholder="Phone Number"
@@ -160,7 +150,6 @@ const VendorForm = () => {
           onBlur={formik.handleBlur}
           value={formik.values.phonenumber}
         />
-        <p className="error">Error</p>
         <p className="text-grey-700">
           (if different from Business WhatsApp number)
         </p>

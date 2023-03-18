@@ -7,8 +7,8 @@ const initialValues = {
   companyWebsite: "",
   companyEmail: "",
   companyAddress: "",
-  industry: "",
-  country: "",
+  industry: "industry",
+  country: "Country of incorporation",
   establishmentDate: "",
   registrationId: "",
   companyProblem: "",
@@ -23,7 +23,7 @@ const validationSchema = Yup.object({
     .required("Required")
     .email("Enter a valid email"),
   industry: Yup.string().required("Select an industry"),
-  country: Yup.string().required("Select an industry"),
+  country: Yup.string().required("Select a country"),
   establishmentDate: Yup.number().required("Required"),
   companyProblem: Yup.string().required("Required"),
   companySolution: Yup.string().required("Required"),
@@ -96,32 +96,43 @@ const CompanyForm = () => {
           ) : null}
         </div>
         <select
-          className="input-fields"
+          className={` border h-12 md:h-16 bg-white-300 w-full px-2 rounded-lg text-grey-700 focus:outline-none ${
+            formik.errors.industry && formik.touched.industry
+              ? "border-red-500 "
+              : "border-blue-400 "
+          } `}
           name="industry"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.industry}
         >
-          <option selected disabled>
+          <option value="industry" disabled>
             Industry
           </option>
           {options.map((country, index) => (
-            <option key={index}>{country.label}</option>
+            <option key={index} value={country.label}>
+              {country.label}
+            </option>
           ))}
         </select>
         <select
-          className="input-fields "
+          className={` border h-12 md:h-16 bg-white-300 w-full px-2 rounded-lg text-grey-700 focus:outline-none ${
+            formik.errors.industry && formik.touched.industry
+              ? "border-red-500 "
+              : "border-blue-400 "
+          } `}
           name="country"
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
           value={formik.values.country}
-          defaultValue="Country of incorporation"
         >
-          <option selected disabled>
+          <option value="Country of incorporation" disabled>
             Country of incorporation
           </option>
           {options.map((country, index) => (
-            <option key={index}>{country.label}</option>
+            <option key={index} value={country.label}>
+              {country.label}
+            </option>
           ))}
         </select>
         <div>
