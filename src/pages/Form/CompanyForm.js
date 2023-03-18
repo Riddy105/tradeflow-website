@@ -24,7 +24,7 @@ const validationSchema = Yup.object({
     .email("Enter a valid email"),
   industry: Yup.string().required("Select an industry"),
   country: Yup.string().required("Select a country"),
-  establishmentDate: Yup.number().required("Required"),
+  establishmentDate: Yup.string().required("Required"),
   companyProblem: Yup.string().required("Required"),
   companySolution: Yup.string().required("Required"),
   companyGoal: Yup.string().required("Required"),
