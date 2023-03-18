@@ -3,7 +3,7 @@ import { useFormik } from "formik";
 import countryList from "react-select-country-list";
 import * as Yup from "yup";
 import React from "react";
-import { Navigate, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 const initialValues = {
   Title: "title",
   FirstName: "",
@@ -35,7 +35,7 @@ const VendorForm = ({ popSuccessModalHandler }) => {
   const formRef = useRef();
   const submissionhandler = () => {
     popSuccessModalHandler();
-    // setTimeout(() => navigate("/"), 10000);
+    setTimeout(() => navigate("/"), 10000);
   };
   const handleSubmit = (e) => {
     e.preventDefault();

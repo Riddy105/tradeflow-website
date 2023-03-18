@@ -7,7 +7,7 @@ const SuccessModal = (props) => {
       <div className="overlay" onClick={props.closeSuccessModal}></div>
       <div className="modal" onClick={props.closeSuccessModal}>
         <h2 className="font-bold text-xl md:text-3xl">Great Job!</h2>
-        <img src={success}></img>
+        <img src={success} alt="Success modal illustration"></img>
         <p className="font-medium text-base md:text-xl">
           You have successfully joined the wait list of our product.
         </p>
