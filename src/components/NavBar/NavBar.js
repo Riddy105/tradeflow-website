@@ -56,7 +56,7 @@ const NavBar = ({ showNav, toggleNav }) => {
             placeholder="Search"
             className="hidden mobileNav:block w-28 xl:w-40 py-4 rounded-lg placeholder:text-center bg-grey-300 bg-search bg-no-repeat bg-[20%_50%] focus:outline-none focus:bg-none"
           />
-          <NavLink to="/">
+          <NavLink to="/form">
             <Button paddingY="py-4">Join the waitlist</Button>
           </NavLink>
           <button

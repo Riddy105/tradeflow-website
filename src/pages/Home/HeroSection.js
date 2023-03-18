@@ -15,9 +15,11 @@ const HeroSection = () => {
           Gain fast and easy access to Africa's emerging economies with tools
           that simplify your business expansion.
         </p>
-        <Button paddingY="py-5" width="w-36 xl:w-48">
-          Join our waitlist
-        </Button>
+        <NavLink to="/form">
+          <Button paddingY="py-5" width="w-36 xl:w-48">
+            Join our waitlist
+          </Button>
+        </NavLink>
       </article>
       <section className="bg-blue-300 container-custom rounded-3xl py-10 ">
         <div className="grid grid-cols-1 items-center sm:grid-cols-2 gap-10 w-10/12 lg:w-11/12 mx-auto">
