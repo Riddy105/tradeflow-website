@@ -49,7 +49,7 @@ const Footer = () => {
         <ul className="flex gap-4 md:gap-8 items-end my-8 md:my-12">
           {SOCIALS.map((social, index) => (
             <li key={index}>
-              <a href={social.link} target="_blank">
+              <a href={social.link} target="_blank" rel="noreferrer">
                 <img
                   src={social.img}
                   alt={`${social} Icon`}
