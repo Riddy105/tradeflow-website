@@ -4,6 +4,7 @@ import pattern from "../../assets/images/form-pattern.png";
 import CompanyForm from "./CompanyForm";
 import VendorForm from "./VendorForm";
 import SuccessModal from "../../components/SuccessModal/SuccessModal";
+import { Link } from "react-router-dom";
 
 const Form = () => {
   const [companyForm, setCompanyForm] = useState(true);
@@ -28,11 +29,13 @@ const Form = () => {
           className="mix-blend-multiply h-[120px] md:h-full w-full"
           alt="pattern illustration"
         ></img>
-        <img
-          src={logo}
-          className="w-[168px] h-[35px] object-cover lg:w-auto lg:h-auto absolute top-[50%] left-[30%] "
-          alt="Tradaeflow logo"
-        ></img>
+        <Link to="/">
+          <img
+            src={logo}
+            className="w-[168px] h-[35px] object-cover lg:w-auto lg:h-auto absolute top-[50%] left-[50%] translate-x-[-50%]"
+            alt="Tradaeflow logo"
+          ></img>
+        </Link>
       </div>
       {/* </div> */}
       <div className="md:bg-blue-300 md:pt-40 md:overflow-y-auto ">
@@ -67,7 +70,9 @@ const Form = () => {
           {!companyForm && (
             <VendorForm popSuccessModalHandler={popSuccessModal} />
           )}
-          {companyForm && <CompanyForm />}
+          {companyForm && (
+            <CompanyForm popSuccessModalHandler={popSuccessModal} />
+          )}
         </section>
       </div>
       {submitted && <SuccessModal closeSuccessModal={closeSuccessModal} />}

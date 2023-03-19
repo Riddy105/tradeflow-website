@@ -17,21 +17,30 @@ const PRODUCTS = [
 const Main = (props) => {
   return (
     <main>
-      <section className="bg-blueworld ">
+      <section className="bg-blueworld " id="about-us">
         <div className="grid gris-cols-1 sm:grid-cols-2 gap-20 items-center container-custom py-20 lg:pt-28 ">
           <article className="text-white-200 items-center">
             <h2 className="text-2xl md:text-5xl font-bold mb-3 md:mb-10">
               Expanding your business shouldn't be difficult.
             </h2>
+            <p className="text-base leading-10 mb-7">
+              In order to continue to thrive, increase their reach and grow
+              their revenue significantly, businesses need to expand to new and
+              flourishing markets across Africa and other emerging economies.
+              However, company-operated business expansion is often highly
+              difficult due to their expensive nature and varying market
+              compliance requirements.
+            </p>
             <p className="text-base leading-10">
-              First of our kind, Tradeflow Africa is a trade-tech startup
-              helping businesses expand to new markets across Africa. We are on
-              a mission to help businesses grow faster by making cost-effective
-              and less risky business expansion alternatives easily accessible.
-              Our only message is Expand your Business, Grow your Revenue.
-              Tradeflow Africa is a trade-tech startup helping businesses expand
-              to new markets across Africa through its flagship digital
-              solution.
+              Tradeflow Africa provides various tools and resources that enable
+              businesses to expand seamlessly across borders in Africa, and in
+              other emerging markets, presenting an opportunity for businesses
+              to grow simultaneously in multiple markets. Among other things,
+              the solutions provided by Tradeflow make it easy for thriving
+              businesses to easily and quickly connect with vetted Africa-based
+              expansion partners, who in most cases are microentrepreneurs, who
+              possess strong local expertise and network in their respective
+              industries and countries.
             </p>
           </article>
           <img
@@ -41,7 +50,7 @@ const Main = (props) => {
           ></img>
         </div>
       </section>
-      <section className="py-10 md:py-20">
+      <section className="py-10 md:py-20" id="products">
         <div className="text-center md:w-3/5 mx-auto">
           <h2 className="font-bold text-blue-100 text-3xl lg:text-5xl">
             Expansion Broker.
@@ -81,9 +90,11 @@ const Main = (props) => {
           <h2 className="text-grey-100 font-bold text-xl md:text-2xl xl:text-4xl">
             Business Expansion made easy
           </h2>
-          <Button paddingY="py-5" width="w-full sm:w-28 lg:w-48">
-            Join our waitlist
-          </Button>
+          <Link to="/form" className="w-full sm:w-auto">
+            <Button paddingY="w-full py-5" width=" sm:w-28 lg:w-48">
+              Join our waitlist
+            </Button>
+          </Link>
         </div>
         <div className="w-11/12 md:w-3/4 mx-auto mt-5 sm:mt-10 border border-blue-100 p-10 grid grid-cols-1 sm:grid-cols-2 gap-10 rounded-3xl items-center">
           <article className="flex flex-col gap-7">
@@ -91,15 +102,16 @@ const Main = (props) => {
               Story of the week
             </p>
             <h2 className="text-blue-100 font-bold text-3xl lg:text-5xl">
-              Tradeflow x CinderBuild
+              Tradeflow Africa launches the Tradeflow Expansion Broker
             </h2>
             <p className="font-normal text-grey-400 text-base">
-              It can be challenging to step out of the grind of everyday work to
-              attend conferences, but in a fast-paced industry like marketing,
-              it's vital to stay up on the trends. I went to HyperGrowth in
-              Boston a while back.
+              Tradeflow Expansion Broker is a marketplace for established
+              businesses to directly connect with a robust network of
+              micro-entrepreneurs across Africa. Starting with Nigeria -
+              Africa's largest economy and most populous nation, with a focus on
+              the software retail industry,
             </p>
-            <Link to="/">
+            <Link to="/blog">
               <Button paddingY="py-5" width="w-36 xl:w-48">
                 Read Story
               </Button>

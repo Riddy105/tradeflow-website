@@ -1,4 +1,4 @@
-import { useMemo, useRef } from "react";
+import { useMemo, useRef, useState } from "react";
 import { useFormik } from "formik";
 import countryList from "react-select-country-list";
 import * as Yup from "yup";
@@ -33,44 +33,37 @@ const validationSchema = Yup.object({
 const VendorForm = ({ popSuccessModalHandler }) => {
   const navigate = useNavigate();
   const formRef = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
   const submissionhandler = () => {
-    popSuccessModalHandler();
-    setTimeout(() => navigate("/"), 10000);
+    setIsSubmitting(false);
+    popSuccessModalHandler(); // Function to change the submitted state to true and this triggers a modal popup.
+    setTimeout(() => navigate("/"), 10000); // After 10 seconds, we want to navigate back to home.
   };
   const handleSubmit = (e) => {
     e.preventDefault();
+    setIsSubmitting(true);
     const formData = new FormData(formRef.current);
     fetch(
-      "https://script.google.com/macros/s/AKfycbxJ_j7qC-xaEh6nBJrFdV7ViXnNJlXiyKHK55pN4xuHvgU97xQhZJNgGwsKER3gftUSxg/exec",
+      "https://script.google.com/macros/s/AKfycbx5nScxp4pX09lz1j-s9w3GKDUenltgUZpX5zZ--4p3glSOf5v81skIG1NQxCf7R-rtAg/exec",
       {
         method: "POST",
         body: formData,
       }
-    ).then((res) => {
-      if (res.ok) {
-        submissionhandler();
-      }
-    });
-    // .then((data) => submissionhandler())
-    // .catch((err) => console.log(err));
+    )
+      .then((res) => {
+        if (res.ok) {
+          submissionhandler();
+        }
+        console.log(res);
+      })
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
   };
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      const formData = new FormData(formRef.current);
-      formData.append("FirstName", values.FirstName);
-      formData.append("LastName", values.LastName);
-      fetch(
-        "https://script.google.com/macros/s/AKfycbxJ_j7qC-xaEh6nBJrFdV7ViXnNJlXiyKHK55pN4xuHvgU97xQhZJNgGwsKER3gftUSxg/exec",
-        {
-          method: "POST",
-          body: formData,
-        }
-      )
-        .then((res) => res.json())
-        .then((data) => console.log(data))
-        .catch((err) => console.log(err));
+      console.log(values);
     },
   });
   const options = useMemo(() => countryList().getData(), []);
@@ -242,7 +235,9 @@ const VendorForm = ({ popSuccessModalHandler }) => {
       </div>
       <button
         type="submit"
-        className="bg-blue-100 rounded-lg text-white-200 mt-10 md:mt-20 w-full md:w-1/4 h-12"
+        className={`${
+          isSubmitting ? "bg-blue-100/20" : "bg-blue-100"
+        } rounded-lg text-white-200 mt-10 md:mt-20 w-full md:w-1/4 h-12`}
       >
         Join
       </button>

@@ -1,13 +1,14 @@
-import React, { useMemo } from "react";
+import React, { useMemo, useRef, useState } from "react";
 import { useFormik } from "formik";
 import countryList from "react-select-country-list";
+import { useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 const initialValues = {
   companyName: "",
   companyWebsite: "",
   companyEmail: "",
   companyAddress: "",
-  industry: "industry",
+  industry: "",
   country: "Country of incorporation",
   establishmentDate: "",
   registrationId: "",
@@ -29,15 +30,43 @@ const validationSchema = Yup.object({
   companySolution: Yup.string().required("Required"),
   companyGoal: Yup.string().required("Required"),
 });
-const CompanyForm = () => {
+const CompanyForm = ({ popSuccessModalHandler }) => {
+  const formRef = useRef();
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const options = useMemo(() => countryList().getData(), []);
+  const navigate = useNavigate();
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values) => console.log(values),
   });
-  const options = useMemo(() => countryList().getData(), []);
+  const submissionhandler = () => {
+    setIsSubmitting(false);
+    popSuccessModalHandler(); // Function to change the submitted state to true and this triggers a modal popup.
+    setTimeout(() => navigate("/"), 10000); // After 10 seconds, we want to navigate back to home.
+  };
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    const formData = new FormData(formRef.current);
+    fetch(
+      "https://script.google.com/macros/s/AKfycbwIYT1UzTFolc2490xf0Ro4LTpbXlUpdHTokH6nAI-GjzCEs-PRWWFkWT4HCcClPbrDAg/exec ",
+      {
+        method: "POST",
+        body: formData,
+      }
+    )
+      .then((res) => {
+        if (res.ok) {
+          submissionhandler();
+        }
+        console.log(res);
+      })
+      .then((data) => console.log(data))
+      .catch((err) => console.log(err));
+  };
   return (
-    <form onSubmit={formik.handleSubmit}>
+    <form onSubmit={handleSubmit} ref={formRef}>
       <div className="mb-4">
         <input
           type="text"
@@ -95,26 +124,20 @@ const CompanyForm = () => {
             <p className="error">{formik.errors.companyAddress}</p>
           ) : null}
         </div>
-        <select
-          className={` border h-12 md:h-16 bg-white-300 w-full px-2 rounded-lg text-grey-700 focus:outline-none ${
-            formik.errors.industry && formik.touched.industry
-              ? "border-red-500 "
-              : "border-blue-400 "
-          } `}
-          name="industry"
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
-          value={formik.values.industry}
-        >
-          <option value="industry" disabled>
-            Industry
-          </option>
-          {options.map((country, index) => (
-            <option key={index} value={country.label}>
-              {country.label}
-            </option>
-          ))}
-        </select>
+        <div className="">
+          <input
+            type="text"
+            placeholder="Industry"
+            className="input-fields"
+            name="industry"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.industry}
+          />
+          {formik.errors.industry && formik.touched.industry ? (
+            <p className="error">{formik.errors.industry}</p>
+          ) : null}
+        </div>
         <select
           className={` border h-12 md:h-16 bg-white-300 w-full px-2 rounded-lg text-grey-700 focus:outline-none ${
             formik.errors.industry && formik.touched.industry
@@ -205,7 +228,11 @@ const CompanyForm = () => {
           <p className="error">{formik.errors.companyGoal}</p>
         ) : null}
       </div>
-      <button className="bg-blue-100 rounded-lg text-white-200 mt-10 md:mt-20 w-full md:w-1/4 h-12">
+      <button
+        className={`${
+          isSubmitting ? "bg-blue-100/20" : "bg-blue-100"
+        } rounded-lg text-white-200 mt-10 md:mt-20 w-full md:w-1/4 h-12`}
+      >
         Join
       </button>
     </form>

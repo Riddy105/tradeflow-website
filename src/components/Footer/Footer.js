@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import whiteLogo from "../../assets/images/Tradeflow-logo-white.png";
 import Instagram from "../../assets/icons/Instagram.png";
 import Mail from "../../assets/icons/Mail.png";
@@ -7,7 +6,24 @@ import Twitter from "../../assets/icons/Twitter.png";
 import LinkedIn from "../../assets/icons/LinkedIn.png";
 
 const Footer = () => {
-  const SOCIALS = [Mail, Instagram, LinkedIn, Twitter];
+  const SOCIALS = [
+    {
+      img: Mail,
+      link: "talktous@tradeflow.africa",
+    },
+    {
+      img: Instagram,
+      link: "https://instagram.com/tradeflow.africa?igshid=YmMyMTA2M2Y=",
+    },
+    {
+      img: LinkedIn,
+      link: "https://www.linkedin.com/company/tradeflow-africa/",
+    },
+    {
+      img: Twitter,
+      link: "https://twitter.com/TradeflowAfrica?t=36N6pz2cfE5f-4_8Q7KXYw&s=08",
+    },
+  ];
   return (
     <footer className="bg-blue-300 pb-10">
       <div className="bg-blue-100 w-[95%] mx-auto rounded-lg flex flex-col items-center pt-5 md:pt-10 pb-3 md:pb-6">
@@ -33,13 +49,13 @@ const Footer = () => {
         <ul className="flex gap-4 md:gap-8 items-end my-8 md:my-12">
           {SOCIALS.map((social, index) => (
             <li key={index}>
-              <Link to="/">
+              <a href={social.link} target="_blank">
                 <img
-                  src={social}
+                  src={social.img}
                   alt={`${social} Icon`}
                   className="w-6 object-contain sm:w-auto"
                 ></img>
-              </Link>
+              </a>
             </li>
           ))}
         </ul>

@@ -34,7 +34,7 @@ const HeroSection = () => {
               a mission to help businesses grow faster by making cost-effective
               and less risky business expansion alternatives easily accessible.
             </p>
-            <NavLink to="/">
+            <NavLink to="/blog">
               <Button paddingY="py-5" width="w-36 xl:w-48">
                 Read more
               </Button>
