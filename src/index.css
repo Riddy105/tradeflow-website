@@ -20,7 +20,7 @@
   @apply z-[5] absolute right-0 top-0 h-screen w-[60vw] mobileNav:w-auto mobileNav:h-auto mobileNav:relative bg-blue-100 mobileNav:bg-transparent text-sm lg:text-base font-medium text-white-200 mobileNav:text-blue-200 flex flex-col mobileNav:flex-row gap-9 mobileNav:gap-3 lg:gap-5 xl:gap-8 pt-40 pb-4 px-10 mobileNav:p-0 mobileNav:translate-x-0 transition-all duration-1000;
 }
 .input-fields {
-  @apply border border-blue-400 h-12 md:h-16 bg-white-300 w-full px-2 rounded-lg text-grey-700;
+  @apply border border-blue-400 h-12 md:h-16 bg-white-300 w-full px-2 rounded-lg text-grey-700 text-sm md:text-base;
 }
 .error {
   @apply text-red-700;

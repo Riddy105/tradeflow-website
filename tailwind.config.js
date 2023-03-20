@@ -20,7 +20,7 @@ module.exports = {
         },
         grey: {
           100: "#40495A",
-          200: "#263238",
+          200: "#26323B",
           300: "#F6F7F9",
           400: "#6B6F80",
           500: "#292B33",
@@ -44,10 +44,14 @@ module.exports = {
         search: "url('/src/assets/icons/search-icon.png')",
         world: "url('/src/assets/images/world-map.png')",
         blueworld: "url('/src/assets/images/blue-world.png')",
+        blueworldmobile: "url('/src/assets/images/blue-world-mobile.png')",
         pattern: "url('/src/assets/images/form-pattern.png')",
       },
       backgroundSize: {
         100: "100%",
+      },
+      gridTemplateColumns: {
+        custom1: "45fr 55fr",
       },
     },
   },

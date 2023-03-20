@@ -31,9 +31,13 @@ const validationSchema = Yup.object({
 const CompanyForm = ({ popSuccessModalHandler }) => {
   const formRef = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [dateInput, setDateInput] = useState(false);
   const options = useMemo(() => countryList().getData(), []);
   const navigate = useNavigate();
 
+  const toggleInputType = () => {
+    setDateInput(true);
+  };
   const submissionhandler = () => {
     setIsSubmitting(false);
     popSuccessModalHandler(); // Function to change the submitted state to true and this triggers a modal popup.
@@ -66,7 +70,7 @@ const CompanyForm = ({ popSuccessModalHandler }) => {
       setIsSubmitting(true);
       const formData = new FormData(formRef.current);
       fetch(
-        "https://script.google.com/macros/s/AKfycbwIYT1UzTFolc2490xf0Ro4LTpbXlUpdHTokH6nAI-GjzCEs-PRWWFkWT4HCcClPbrDAg/exec ",
+        "https://script.google.com/macros/s/AKfycbwIYT1UzTFolc2490xf0Ro4LTpbXlUpdHTokH6nAI-GjzCEs-PRWWFkWT4HCcClPbrDAg/exec",
         {
           method: "POST",
           body: formData,
@@ -176,11 +180,12 @@ const CompanyForm = ({ popSuccessModalHandler }) => {
         </select>
         <div>
           <input
-            type="date"
+            type={`${dateInput ? "date" : "text"}`}
             placeholder="Date of Establishment"
             className="input-fields"
             name="establishmentDate"
             onChange={formik.handleChange}
+            onFocus={toggleInputType}
             onBlur={formik.handleBlur}
             value={formik.values.establishmentDate}
           />

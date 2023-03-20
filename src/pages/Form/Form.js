@@ -21,7 +21,7 @@ const Form = () => {
   };
 
   return (
-    <section className="grid grid-cols-1 md:grid-cols-2 md:h-screen ">
+    <section className="grid grid-cols-1 md:grid-cols-custom1 md:h-screen ">
       {/* <div className="flex justify-center items-center bg-pattern bg-no-repeat md:overflow-y-hidden py-12 md:py-0"> */}
       <div className="bg-blue-100 relative md:overflow-y-hidden">
         <img

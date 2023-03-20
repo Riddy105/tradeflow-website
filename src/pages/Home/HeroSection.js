@@ -5,13 +5,13 @@ import launching from "../../assets/images/launching-amico.svg";
 
 const HeroSection = () => {
   return (
-    <section className="hero-section my-10 lg:my-20 bg-world bg-no-repeat bg-100 md:bg-auto ">
+    <section className="hero-section my-40 bg-world bg-no-repeat bg-100 md:bg-auto ">
       <article className="mb-10 lg:mb-36 flex flex-col items-center gap-4 lg:gap-9 container-custom text-center">
         <h1 className="text-grey-100 text-3xl md:text-6xl font-extrabold lg:w-4/5 min-[1300px]:w-3/5">
           Expand your <span className="text-blue-100">Business, Grow</span> your
           Revenue.
         </h1>
-        <p className="text-grey-200 text-base md:text-xl">
+        <p className="text-grey-200 text-base md:text-xl lg:w-[45%]">
           Gain fast and easy access to Africa's emerging economies with tools
           that simplify your business expansion.
         </p>
@@ -28,7 +28,7 @@ const HeroSection = () => {
             <h2 className="text-blue-100 font-bold text-3xl lg:text-5xl">
               Tradeflow Africa launches the Tradeflow Expansion Broker
             </h2>
-            <p className="font-medium text-grey-400 text-base">
+            <p className="font-medium text-grey-200 text-base">
               Tradeflow Expansion Broker is a marketplace for established
               businesses to directly connect with a robust network of
               micro-entrepreneurs across Africa. Starting with Nigeria -
