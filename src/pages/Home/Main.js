@@ -18,7 +18,7 @@ const Main = (props) => {
   return (
     <main>
       <section className="bg-blueworld " id="about-us">
-        <div className="grid gris-cols-1 md:grid-cols-2 gap-20 items-center w-4/5 mx-auto py-20 lg:pt-28 ">
+        <div className="grid gris-cols-1 md:grid-cols-2 gap-20 items-center w-4/5 md:w-11/12 mx-auto py-20 lg:pt-28 ">
           <article className="text-white-200 items-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-10">
               Expanding your business should not be difficult.
@@ -106,7 +106,7 @@ const Main = (props) => {
               Story of the week
             </p>
             <h2 className="text-blue-100 font-bold text-3xl lg:text-5xl">
-              Tradeflow Africa launches the Tradeflow Expansion Broker
+              Tradeflow Africa launches Tradeflow Expansion Broker
             </h2>
             <p className="font-normal text-grey-200 text-base">
               Tradeflow Expansion Broker is a marketplace for established

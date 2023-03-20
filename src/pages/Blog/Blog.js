@@ -6,14 +6,14 @@ import { Link } from "react-router-dom";
 const Blog = () => {
   return (
     <>
-      <section className="bg-blue-100 relative">
+      <section className="bg-blue-100 relative mt-20">
         <img
           src={map}
           alt="World map"
-          className="mix-blend-multiply w-full"
+          className="mix-blend-multiply w-full h-[200px] md:h-[500px]"
         ></img>
-        <h2 className="text-center font-extrabold text-xl md:text-5xl absolute top-[30%] md:top-[50%] left-[50%] translate-x-[-50%] text-white-200 leading-[1.1] ">
-          Tradeflow Africa launches the Tradeflow Expansion Broker
+        <h2 className="text-center font-extrabold text-xl md:text-5xl absolute top-[50%] left-[50%] translate-x-[-50%] text-white-200 leading-[1.1] ">
+          Tradeflow Africa launches Tradeflow Expansion Broker
         </h2>
       </section>
       <article className="container-custom font-medium flex flex-col gap-4 md:gap-8 text-grey-400 py-7 md:py-14 text-base md:text-lg">

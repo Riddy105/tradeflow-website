@@ -13,7 +13,7 @@ const RootLayout = () => {
   };
   return (
     <div className={`${showNav ? "fixed" : ""}`}>
-      <header className="fixed top-0 w-full bg-white-200">
+      <header className="fixed top-0 w-full bg-white-200 z-10">
         <NavBar
           showNav={showNav}
           toggleNav={navClickHandler}

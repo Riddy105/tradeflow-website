@@ -26,7 +26,7 @@ const HeroSection = () => {
           <img src={launching} alt="Visual data illustration"></img>
           <article className="flex flex-col gap-7">
             <h2 className="text-blue-100 font-bold text-3xl lg:text-5xl">
-              Tradeflow Africa launches the Tradeflow Expansion Broker
+              Tradeflow Africa launches Tradeflow Expansion Broker
             </h2>
             <p className="font-medium text-grey-200 text-base">
               Tradeflow Expansion Broker is a marketplace for established
