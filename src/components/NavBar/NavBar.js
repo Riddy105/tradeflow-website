@@ -2,6 +2,7 @@ import React from "react";
 import logo from "../../assets/images/Tradeflow logo.png";
 import whiteLogo from "../../assets/images/Tradeflow-logo-white.png";
 import { NavLink, Link } from "react-router-dom";
+import { HashLink } from "react-router-hash-link";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import Button from "../Button/Button";
@@ -25,15 +26,20 @@ const NavBar = ({ showNav, toggleNav }) => {
           className={`nav-link-classes ${
             showNav ? "translate-x-0" : "translate-x-full"
           }`}
+          onClick={toggleNav}
         >
           <li>
             <NavLink>Home</NavLink>
           </li>
           <li>
-            <NavLink to="/#about-us">About Us</NavLink>
+            <HashLink to="/#about-us" smooth>
+              About Us
+            </HashLink>
           </li>
           <li>
-            <NavLink>Our Products</NavLink>
+            <HashLink to="/#products" smooth>
+              Our products
+            </HashLink>
           </li>
           <li>
             <NavLink>Clients & Partnerships</NavLink>

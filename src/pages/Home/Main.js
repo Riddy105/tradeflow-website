@@ -86,13 +86,17 @@ const Main = (props) => {
         </div>
       </section>
       <section className="bg-blue-300 py-14 lg:py-36">
-        <div className="rounded-2xl w-3/4 lg:w-3/5 mx-auto py-10 sm:py-5 px-8 flex flex-col sm:flex-row sm:justify-center items-center gap-5 bg-white-200">
+        <div className="rounded-2xl w-11/12 lg:w-3/5 mx-auto py-10 sm:py-5 px-8 flex flex-col sm:flex-row sm:justify-center items-center gap-5 bg-white-200">
           <h2 className="text-grey-100 font-bold text-xl md:text-2xl xl:text-4xl">
             Business Expansion made easy
           </h2>
           <Link to="/form" className="w-full sm:w-auto">
-            <Button paddingY="w-full py-5" width=" sm:w-28 lg:w-48">
-              Join our waitlist
+            <Button
+              paddingY="w-full py-5"
+              width=" sm:w-28 lg:w-48"
+              fontWeight="font-semibold"
+            >
+              Join the waitlist
             </Button>
           </Link>
         </div>

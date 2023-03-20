@@ -9,7 +9,7 @@ const Footer = () => {
   const SOCIALS = [
     {
       img: Mail,
-      link: "talktous@tradeflow.africa",
+      link: "mailto:talktous@tradeflow.africa",
     },
     {
       img: Instagram,
@@ -46,7 +46,7 @@ const Footer = () => {
             Subscribe to our newsletter
           </p>
         </div>
-        <ul className="flex gap-4 md:gap-8 items-end my-8 md:my-12">
+        <ul className="flex gap-4 md:gap-8 items-center my-8 md:my-12">
           {SOCIALS.map((social, index) => (
             <li key={index}>
               <a href={social.link} target="_blank" rel="noreferrer">

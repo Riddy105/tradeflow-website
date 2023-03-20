@@ -2,7 +2,6 @@ import React from "react";
 
 const Button = ({
   textColor = "text-white-100",
-  fontFamily = "font-lato",
   children,
   paddingY,
   width = "w-28 xl:w-40",
@@ -10,7 +9,7 @@ const Button = ({
 }) => {
   return (
     <button
-      className={`bg-blue-100 rounded-lg  ${paddingY} ${width} text-center ${textColor} text-sm xl:text-base ${fontFamily} ${fontWeight}`}
+      className={`bg-blue-100 rounded-lg  ${paddingY} ${width} text-center ${textColor} text-sm xl:text-base ${fontWeight}`}
     >
       {children}
     </button>

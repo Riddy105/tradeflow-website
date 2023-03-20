@@ -19,56 +19,74 @@ const initialValues = {
 };
 const validationSchema = Yup.object({
   Title: Yup.string(),
-  Firstname: Yup.string().required("Name field cannot be empty"),
+  FirstName: Yup.string().required("Required"),
   LastName: Yup.string().required("Required"),
   BusinessName: Yup.string().required("Required"),
   Country: Yup.string().required("Required"),
   BusinessType: Yup.string().required("Required"),
   State: Yup.string().required("Required"),
-  Nin: Yup.string().required("Required"),
-  Email: Yup.string().email("Enter a valid Email address"),
-  WhatsappNumber: Yup.string().required("Required"),
-  PhoneNumber: Yup.string(),
+  Nin: Yup.number("Enter a valid number").required("Required"),
+  Email: Yup.string().email("Invalid Email address"),
+  WhatsappNumber: Yup.number("Enter a valid number").required("Required"),
+  PhoneNumber: Yup.number("Enter a valid number"),
 });
 const VendorForm = ({ popSuccessModalHandler }) => {
   const navigate = useNavigate();
   const formRef = useRef();
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const options = useMemo(() => countryList().getData(), []);
+
   const submissionhandler = () => {
     setIsSubmitting(false);
     popSuccessModalHandler(); // Function to change the submitted state to true and this triggers a modal popup.
     setTimeout(() => navigate("/"), 10000); // After 10 seconds, we want to navigate back to home.
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    const formData = new FormData(formRef.current);
-    fetch(
-      "https://script.google.com/macros/s/AKfycbx5nScxp4pX09lz1j-s9w3GKDUenltgUZpX5zZ--4p3glSOf5v81skIG1NQxCf7R-rtAg/exec",
-      {
-        method: "POST",
-        body: formData,
-      }
-    )
-      .then((res) => {
-        if (res.ok) {
-          submissionhandler();
-        }
-        console.log(res);
-      })
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
-  };
   const formik = useFormik({
     initialValues,
     validationSchema,
     onSubmit: (values) => {
-      console.log(values);
+      console.log("workedddd");
+      setIsSubmitting(true);
+      const formData = new FormData(formRef.current);
+      fetch(
+        "https://script.google.com/macros/s/AKfycbx5nScxp4pX09lz1j-s9w3GKDUenltgUZpX5zZ--4p3glSOf5v81skIG1NQxCf7R-rtAg/exec",
+        {
+          method: "POST",
+          body: formData,
+        }
+      )
+        .then((res) => {
+          if (res.ok) {
+            submissionhandler();
+          }
+          console.log(res);
+        })
+        .catch((err) => console.log(err));
     },
   });
-  const options = useMemo(() => countryList().getData(), []);
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   const formData = new FormData(formRef.current);
+  //   fetch(
+  //     "https://script.google.com/macros/s/AKfycbx5nScxp4pX09lz1j-s9w3GKDUenltgUZpX5zZ--4p3glSOf5v81skIG1NQxCf7R-rtAg/exec",
+  //     {
+  //       method: "POST",
+  //       body: formData,
+  //     }
+  //   )
+  //     .then((res) => {
+  //       if (res.ok) {
+  //         submissionhandler();
+  //       }
+  //       console.log(res);
+  //     })
+  //     .then((data) => console.log(data))
+  //     .catch((err) => console.log(err));
+  // };
+
   return (
-    <form onSubmit={handleSubmit} ref={formRef}>
+    <form onSubmit={formik.handleSubmit} ref={formRef}>
       <select
         className="input-fields mb-4"
         name="Title"

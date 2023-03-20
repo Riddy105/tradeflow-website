@@ -20,9 +20,7 @@ const validationSchema = Yup.object({
   companyName: Yup.string().required("Required"),
   companyWebsite: Yup.string().required("Required"),
   companyEmail: Yup.string().required("Required").email("Enter a valid email"),
-  companyAddress: Yup.string()
-    .required("Required")
-    .email("Enter a valid email"),
+  companyAddress: Yup.string().required("Required"),
   industry: Yup.string().required("Select an industry"),
   country: Yup.string().required("Select a country"),
   establishmentDate: Yup.string().required("Required"),
@@ -35,38 +33,56 @@ const CompanyForm = ({ popSuccessModalHandler }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const options = useMemo(() => countryList().getData(), []);
   const navigate = useNavigate();
-  const formik = useFormik({
-    initialValues,
-    validationSchema,
-    onSubmit: (values) => console.log(values),
-  });
+
   const submissionhandler = () => {
     setIsSubmitting(false);
     popSuccessModalHandler(); // Function to change the submitted state to true and this triggers a modal popup.
     setTimeout(() => navigate("/"), 10000); // After 10 seconds, we want to navigate back to home.
   };
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    setIsSubmitting(true);
-    const formData = new FormData(formRef.current);
-    fetch(
-      "https://script.google.com/macros/s/AKfycbwIYT1UzTFolc2490xf0Ro4LTpbXlUpdHTokH6nAI-GjzCEs-PRWWFkWT4HCcClPbrDAg/exec ",
-      {
-        method: "POST",
-        body: formData,
-      }
-    )
-      .then((res) => {
-        if (res.ok) {
-          submissionhandler();
+  // const handleSubmit = (e) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+  //   const formData = new FormData(formRef.current);
+  //   fetch(
+  //     "https://script.google.com/macros/s/AKfycbwIYT1UzTFolc2490xf0Ro4LTpbXlUpdHTokH6nAI-GjzCEs-PRWWFkWT4HCcClPbrDAg/exec ",
+  //     {
+  //       method: "POST",
+  //       body: formData,
+  //     }
+  //   )
+  //     .then((res) => {
+  //       if (res.ok) {
+  //         submissionhandler();
+  //       }
+  //       console.log(res);
+  //     })
+  //     .then((data) => console.log(data))
+  //     .catch((err) => console.log(err));
+  // };
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: (values) => {
+      setIsSubmitting(true);
+      const formData = new FormData(formRef.current);
+      fetch(
+        "https://script.google.com/macros/s/AKfycbwIYT1UzTFolc2490xf0Ro4LTpbXlUpdHTokH6nAI-GjzCEs-PRWWFkWT4HCcClPbrDAg/exec ",
+        {
+          method: "POST",
+          body: formData,
         }
-        console.log(res);
-      })
-      .then((data) => console.log(data))
-      .catch((err) => console.log(err));
-  };
+      )
+        .then((res) => {
+          if (res.ok) {
+            submissionhandler();
+          }
+        })
+        .then((data) => console.log(data))
+        .catch((err) => console.log(err));
+    },
+  });
   return (
-    <form onSubmit={handleSubmit} ref={formRef}>
+    <form onSubmit={formik.handleSubmit} ref={formRef}>
       <div className="mb-4">
         <input
           type="text"
@@ -229,6 +245,7 @@ const CompanyForm = ({ popSuccessModalHandler }) => {
         ) : null}
       </div>
       <button
+        type="submit"
         className={`${
           isSubmitting ? "bg-blue-100/20" : "bg-blue-100"
         } rounded-lg text-white-200 mt-10 md:mt-20 w-full md:w-1/4 h-12`}

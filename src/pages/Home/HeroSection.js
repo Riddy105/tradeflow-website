@@ -17,7 +17,7 @@ const HeroSection = () => {
         </p>
         <NavLink to="/form">
           <Button paddingY="py-5" width="w-36 xl:w-48">
-            Join our waitlist
+            Join the waitlist
           </Button>
         </NavLink>
       </article>
@@ -29,10 +29,11 @@ const HeroSection = () => {
               Tradeflow Africa launches the Tradeflow Expansion Broker
             </h2>
             <p className="font-medium text-grey-400 text-base">
-              First of our kind, Tradeflow Africa is a trade-tech startup
-              helping businesses expand to new markets across Africa. We are on
-              a mission to help businesses grow faster by making cost-effective
-              and less risky business expansion alternatives easily accessible.
+              Tradeflow Expansion Broker is a marketplace for established
+              businesses to directly connect with a robust network of
+              micro-entrepreneurs across Africa. Starting with Nigeria -
+              Africa’s largest economy and most populous nation, with a focus on
+              the software retail industry,
             </p>
             <NavLink to="/blog">
               <Button paddingY="py-5" width="w-36 xl:w-48">
