@@ -29,7 +29,7 @@ const NavBar = ({ showNav, toggleNav }) => {
           onClick={toggleNav}
         >
           <li>
-            <NavLink>Home</NavLink>
+            <NavLink to="/">Home</NavLink>
           </li>
           <li>
             <HashLink to="/#about-us" smooth>
