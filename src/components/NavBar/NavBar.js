@@ -45,7 +45,7 @@ const NavBar = ({ showNav, toggleNav }) => {
             <NavLink>Clients & Partnerships</NavLink>
           </li>
           <li>
-            <NavLink>Blog & Stories</NavLink>
+            <NavLink to="/blog">Blog & Stories</NavLink>
           </li>
 
           <li className="mt-auto mobileNav:hidden">
