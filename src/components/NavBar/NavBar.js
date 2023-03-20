@@ -7,7 +7,7 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { IoCloseSharp } from "react-icons/io5";
 import Button from "../Button/Button";
 
-const NavBar = ({ showNav, toggleNav }) => {
+const NavBar = ({ showNav, toggleNav, closeNav }) => {
   // const [showNav, setShowNav] = useState(false);
   // const navClickHandler = () => {
   //   setShowNav((prev) => !prev);
@@ -26,7 +26,7 @@ const NavBar = ({ showNav, toggleNav }) => {
           className={`nav-link-classes ${
             showNav ? "translate-x-0" : "translate-x-full"
           }`}
-          onClick={toggleNav}
+          onClick={closeNav}
         >
           <li>
             <NavLink to="/">Home</NavLink>

@@ -8,10 +8,17 @@ const RootLayout = () => {
   const navClickHandler = () => {
     setShowNav((prev) => !prev);
   };
+  const closeNav = () => {
+    setShowNav(false);
+  };
   return (
     <div className={`${showNav ? "fixed" : ""}`}>
       <header>
-        <NavBar showNav={showNav} toggleNav={navClickHandler} />
+        <NavBar
+          showNav={showNav}
+          toggleNav={navClickHandler}
+          closeNav={closeNav}
+        />
       </header>
       <Outlet />
       <Footer />
