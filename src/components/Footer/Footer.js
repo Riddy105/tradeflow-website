@@ -29,7 +29,7 @@ const Footer = () => {
       <div className="bg-blue-100 w-[95%] mx-auto rounded-lg flex flex-col items-center pt-5 md:pt-10 pb-3 md:pb-6">
         <img
           src={whiteLogo}
-          className="w-[150px] h-[60px] object-contain md:w-auto md:h-auto mb-7"
+          className="w-[150px] h-[60px] object-contain md:w-[250px] md:h-auto mb-7"
           alt="Tradeflow logo"
         ></img>
         <div>
@@ -48,7 +48,7 @@ const Footer = () => {
         </div>
         <ul className="flex gap-4 md:gap-8 items-center my-8 md:my-12">
           {SOCIALS.map((social, index) => (
-            <li key={index}>
+            <li key={index} className="lg:scale-90">
               <a href={social.link} target="_blank" rel="noreferrer">
                 <img
                   src={social.img}

@@ -32,35 +32,42 @@ const Form = () => {
         <Link to="/">
           <img
             src={logo}
-            className="w-[168px] h-[35px] object-cover lg:w-auto lg:h-auto absolute top-[50%] left-[50%] translate-x-[-50%]"
+            className="w-[168px] h-[35px] object-cover lg:w-[300px] lg:h-auto absolute top-[50%] left-[50%] translate-y-[-50%] translate-x-[-50%]"
             alt="Tradaeflow logo"
           ></img>
         </Link>
       </div>
       {/* </div> */}
-      <div className="md:bg-blue-300 md:pt-40 md:overflow-y-auto ">
+      <div className="md:bg-blue-300 md:py-40 md:overflow-y-auto ">
         <section className="md:w-[85%] mx-auto rounded-xl shadow-custom3 bg-white-200 py-12 md:py-24  px-8 lg:px-14 ">
           <h2 className="text-blue-100 text-2xl md:text-4xl mb-7 font-bold">
             Sign Up
           </h2>
           <div className="flex gap-2 md:gap-4">
             <button
-              className={`bg-blue-300 rounded-lg text-black-100 h-14 md:h-[70px] w-1/2 font-medium text-sm md:text-base ${
+              className={`bg-blue-300 pl-2 py-2 sm:pl-4 text-left rounded-lg text-black-100 h-16 md:h-[70px] w-1/2 font-medium text-sm md:text-base ${
                 companyForm ? "border border-blue-100" : " "
               }`}
               onClick={toggleFormHandler}
             >
-              Software companies
+              <h2 className="text-xs font-bold md:text-base">
+                Established enterprises
+              </h2>
+              <p className="font-normal text-[10px] md:text-xs">
+                Technology companies, FMCG companies...
+              </p>
             </button>
             <button
-              className={`bg-blue-300 rounded-lg text-black-100 h-14 md:h-[70px] w-1/2 font-medium  ${
+              className={`bg-blue-300 pl-2 py-2 sm:pl-4 text-left rounded-lg text-black-100 h-16 md:h-[70px] w-1/2 font-medium  ${
                 companyForm ? "" : "border border-blue-100"
               }`}
               onClick={toggleFormHandler}
             >
-              <h2 className="text-sm md:text-base">Micro entrepreneurs</h2>
-              <p className="font-normal text-xs">
-                Software vendors, stores, restaurants
+              <h2 className="text-xs font-bold md:text-base">
+                Micro-entrepreneurs
+              </h2>
+              <p className="font-normal text-[10px] text-xs">
+                Software vendors, stores, restaurants...
               </p>
             </button>
           </div>

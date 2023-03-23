@@ -28,12 +28,13 @@ const HeroSection = () => {
             <h2 className="text-blue-100 font-bold text-3xl lg:text-5xl">
               Tradeflow Africa launches Tradeflow Expansion Broker
             </h2>
-            <p className="font-medium text-grey-200 text-base">
+            <p className="font-normal text-grey-200 text-base xl:w-4/5 text-justify">
               Tradeflow Expansion Broker is a marketplace for established
-              businesses to directly connect with a robust network of
+              enterprises to directly connect with a robust network of
               micro-entrepreneurs across Africa. Starting with Nigeria -
-              Africa’s largest economy and most populous nation, with a focus on
-              the software retail industry,
+              Africa’s largest economy and most populous nation, Tradeflow will
+              help established enterprises across various industries connect and
+              sell directly to the micro-entrepreneurs (MSMEs).
             </p>
             <NavLink to="/blog">
               <Button paddingY="py-5" width="w-36 xl:w-48">

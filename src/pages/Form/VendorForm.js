@@ -247,7 +247,7 @@ const VendorForm = ({ popSuccessModalHandler }) => {
           onBlur={formik.handleBlur}
           value={formik.values.PhoneNumber}
         />
-        <p className="text-grey-700">
+        <p className="text-grey-700 mt-4">
           (if different from Business WhatsApp number)
         </p>
       </div>
@@ -255,7 +255,7 @@ const VendorForm = ({ popSuccessModalHandler }) => {
         type="submit"
         className={`${
           isSubmitting ? "bg-blue-100/20" : "bg-blue-100"
-        } rounded-lg text-white-200 mt-10 md:mt-20 w-full md:w-1/4 h-12`}
+        } rounded-lg text-white-200 mt-10 md:mt-14 w-full md:w-1/4 h-12`}
       >
         Join
       </button>

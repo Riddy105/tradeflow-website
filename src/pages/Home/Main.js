@@ -18,12 +18,12 @@ const Main = (props) => {
   return (
     <main>
       <section className="bg-blueworld " id="about-us">
-        <div className="grid gris-cols-1 md:grid-cols-2 gap-20 items-center w-4/5 md:w-11/12 mx-auto py-20 lg:pt-28 ">
+        <div className="grid gris-cols-1 md:grid-cols-2 gap-20 items-center w-4/5 md:w-[85%] mx-auto py-20 lg:py-36 ">
           <article className="text-white-200 items-center">
             <h2 className="text-3xl md:text-5xl font-bold mb-3 md:mb-10">
               Expanding your business should not be difficult.
             </h2>
-            <p className="text-base leading-10 mb-7">
+            <p className="text-base leading-7 md:leading-8 mb-7 text-justify">
               In order to continue to thrive, increase their reach and grow
               their revenue significantly, businesses need to expand to new and
               flourishing markets across Africa and other emerging economies.
@@ -31,7 +31,7 @@ const Main = (props) => {
               difficult due to their expensive nature and varying market
               compliance requirements.
             </p>
-            <p className="text-base leading-10">
+            <p className="text-base leading-7 md:leading-8 text-justify">
               Tradeflow Africa provides various tools and resources that enable
               businesses to expand seamlessly across borders in Africa, and in
               other emerging markets, presenting an opportunity for businesses
@@ -53,14 +53,14 @@ const Main = (props) => {
       <section className="py-10 md:py-20" id="products">
         <div className="text-center md:w-3/5 mx-auto">
           <h2 className="font-bold text-blue-100 text-3xl lg:text-5xl">
-            Expansion Broker.
+            Expansion Broker
           </h2>
           <p className="text-[#333]">Our Products</p>
           <ul className="flex gap-4 md:gap-10 flex-wrap justify-center mt-5 md:mt-10">
             {PRODUCTS.map((product, index) => (
               <li
                 key={index}
-                className="font-bold bg-white-200 w-[168px] md:w-[33%] py-7 shadow-custom2 text-blue-100 rounded-lg text-sm sm:text-lg lg:text-2xl"
+                className="lg:basis-[30%] font-bold bg-white-200 w-[168px] md:w-[33%] py-7 shadow-custom2 text-blue-100 rounded-lg lg:rounded-2xl text-sm sm:text-lg lg:text-2xl"
               >
                 <Link to="/"> {product}</Link>
               </li>
@@ -108,12 +108,13 @@ const Main = (props) => {
             <h2 className="text-blue-100 font-bold text-3xl lg:text-5xl">
               Tradeflow Africa launches Tradeflow Expansion Broker
             </h2>
-            <p className="font-normal text-grey-200 text-base">
+            <p className="font-normal text-grey-200 text-base text-justify">
               Tradeflow Expansion Broker is a marketplace for established
-              businesses to directly connect with a robust network of
+              enterprises to directly connect with a robust network of
               micro-entrepreneurs across Africa. Starting with Nigeria -
-              Africa's largest economy and most populous nation, with a focus on
-              the software retail industry,
+              Africa’s largest economy and most populous nation, Tradeflow will
+              help established enterprises across various industries connect and
+              sell directly to the micro-entrepreneurs (MSMEs).
             </p>
             <Link to="/blog">
               <Button paddingY="py-5" width="w-36 xl:w-48">

@@ -19,7 +19,7 @@ const NavBar = ({ showNav, toggleNav, closeNav }) => {
           <img
             src={logo}
             alt="Tradeflow logo"
-            className="w-[160px] xl:w-[200px] h-[55px] object-contain"
+            className="w-[160px] h-[50px] object-contain"
           ></img>
         </Link>
         <ul
@@ -60,10 +60,12 @@ const NavBar = ({ showNav, toggleNav, closeNav }) => {
           <input
             type="text"
             placeholder="Search"
-            className="hidden mobileNav:block w-28 xl:w-40 py-4 rounded-lg placeholder:text-center bg-grey-300 bg-search bg-no-repeat bg-[20%_50%] focus:outline-none focus:bg-none"
+            className="text-sm hidden mobileNav:block w-28 xl:w-40 py-4 rounded-lg placeholder:text-center bg-grey-300 bg-search bg-no-repeat bg-[20%_50%] focus:outline-none focus:bg-none"
           />
           <NavLink to="/form">
-            <Button paddingY="py-4">Join the waitlist</Button>
+            <Button paddingY="py-4" width="w-28 xl:w-40">
+              Join the waitlist
+            </Button>
           </NavLink>
           <button
             className="text-blue-100 mobileNav:hidden z-10 "
